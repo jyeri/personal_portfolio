@@ -8,7 +8,7 @@ import github from '../assets/reshot-icon-github.svg';
 import instagram from '../assets/reshot-icon-instagram.svg';
 import spotify from '../assets/reshot-icon-spotify.svg';
 import steam from '../assets/reshot-icon-steam.svg';
-import thinker from '../assets/reshot-icon-thinking-code.svg';
+import JYRI from '../assets/JYRI.svg';
 import programmer from '../assets/reshot-icon-programmer.svg';
 import arkkiwhite from '../assets/arkki-logo-white.svg';
 
@@ -40,7 +40,7 @@ const onUpdateActiveLink = (link: string) => {
       <Container>
         <Navbar.Brand href="/">
           <div className='page-logo'>
-            <img src={programmer} alt="Logo" />
+            <img src={JYRI} alt="Logo" />
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">

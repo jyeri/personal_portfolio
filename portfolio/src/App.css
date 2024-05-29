@@ -168,7 +168,7 @@ span.navbar-text {
 }
 
 .page-logo img {
-	width: 80%;
+	width: 150%;
 	z-index: 1;
 }
 
@@ -266,7 +266,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
+  background-image: url('./assets/reshot-icon-thinking-code.svg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -282,7 +282,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: inline-block;
 }
 .banner h1 {
-  font-size: 65px;
+  font-size: 55px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
@@ -315,6 +315,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: 25px;
 }
 .banner img {
+  filter: invert(100%);
   animation: updown 3s linear infinite;
 }
 @keyframes updown {
