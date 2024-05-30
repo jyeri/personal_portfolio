@@ -8,7 +8,7 @@ import github from '../assets/reshot-icon-github.svg';
 import instagram from '../assets/reshot-icon-instagram.svg';
 import spotify from '../assets/reshot-icon-spotify.svg';
 import steam from '../assets/reshot-icon-steam.svg';
-import JYRI from '../assets/JYRI.svg';
+import JYRI from '../assets/JYRI-txt.svg';
 import programmer from '../assets/reshot-icon-programmer.svg';
 import arkkiwhite from '../assets/arkki-logo-white.svg';
 

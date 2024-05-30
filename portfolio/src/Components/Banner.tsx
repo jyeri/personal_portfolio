@@ -7,7 +7,7 @@ import headerImg from '../assets/reshot-icon-thinking-code.svg'
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["Problem Solver", "Coder", "Web Developer", "Problem Solver", "Software Developer"];
+    const toRotate = ["Problem Solver", "Coder", "Web Developer", "Software Developer", "IT-GUY", "Full Stack Developer", "Tech Enthusiast"];
     const [text, setText] = useState(toRotate[0]);
     const period = 2000;
     const [delta, setDelta] = useState(300 - Math.random() * 100);
@@ -37,10 +37,7 @@ export const Banner = () => {
         } else if(isDeleting && updText === '') {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
-            setDelta(500);
-            if(loopNum === toRotate.length) {
-                setLoopNum(0);
-            }
+            setDelta(150);
         }
 
     }
