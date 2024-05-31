@@ -39,7 +39,9 @@ export const Banner = () => {
             setLoopNum(loopNum + 1);
             setDelta(150);
         }
-
+        if (loopNum === toRotate.length + 1) {
+            setLoopNum(0);
+        }
     }
 
     return (
