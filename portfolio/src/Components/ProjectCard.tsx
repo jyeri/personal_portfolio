@@ -1,58 +1,56 @@
-import { Col } from "react-bootstrap";
+import { Col, Form } from "react-bootstrap";
 
 interface IcardProps {
     title: string,
     description: string,
     imgUrl: string,
-    videoUrl: string,
+    mp4: string,
+    id: number,
 };
 
-export const ProjectCard: React.FunctionComponent<IcardProps> = ({ title, description, imgUrl, videoUrl }) => {
+export const ProjectCard: React.FunctionComponent<IcardProps> = ({ title, description, imgUrl, mp4, id }) => {
 
+
+    
     const handleOnMouseOver = (e: React.MouseEvent<HTMLVideoElement>) => {
-        console.log("PLAY");
-        const video = e.currentTarget;
-        if (video.readyState >= 3) { // HAVE_FUTURE_DATA
-            video.play().catch(error => {
-                // Auto-play was prevented
-                // Show a UI element to let the user manually start playback
-                console.log("playback prevented");
-            });
-        } else {
-            video.load();
-            video.addEventListener('canplay', function onCanPlay() {
-                video.removeEventListener('canplay', onCanPlay);
-                video.play().catch(error => {
-                    // Auto-play was prevented
-                    // Show a UI element to let the user manually start playback
-                    console.log("playback prevented");
-                });
-            });
+        var playPromise = e.currentTarget.play();
+        var videoid = e.currentTarget.id;
+
+        if (playPromise !== undefined) {
+          playPromise.then(_ => {
+            console.log('play');
+          })
+          .catch(error => {
+            console.log(playPromise);
+            console.log('play error with +', videoid);
+          });
         }
-    }
-
-    const HandleOnMouseOut = (e: React.MouseEvent<HTMLVideoElement>) => {
-        console.log("PAUSE");
+    };
+    
+      const handleOnMouseOut = (e: React.MouseEvent<HTMLVideoElement>) => {
         e.currentTarget.pause();
-    }
+        console.log('pause');
+      };
 
-
-  return (
-      <Col>
-        <div className="proj-imgbx">
-          <img src={imgUrl} alt="logo"/>
+      return (
+        <Col size={12} sm={6} md={4}>
+          <div className="proj-imgbx">
           <video 
-            loop
-            preload="none" 
-            muted
-            id={title}
-            onMouseOver={handleOnMouseOver}
-            onMouseOut={HandleOnMouseOut}
-            onClick={() => console.log('Video clicked')}>
-              <source id={title} src={videoUrl} type='video/mp4'/>
-          </video>
-
-        </div>
-      </Col>
-  )
+                id={`video${id}`}
+                loop
+                preload='none'
+                muted // Needs to be there to be able to play
+                onMouseOver={handleOnMouseOver}
+                onMouseOut={handleOnMouseOut}
+            >
+                <source src={mp4} type='video/mp4' />
+            </video>
+            <img src={imgUrl} />
+            <div className="proj-txtx">
+              <h4>{title}</h4>
+              <span>{description}</span>
+            </div>
+          </div>
+        </Col>
+      )
 }

@@ -24,18 +24,21 @@ export const Projects = () => {
             description: "Sorting Algorithm. Hive Helsinki Project, done in C",
             imgUrl: pushSwap_img,
             mp4: pushSwap_mp4,
+            id: 1,
           },
           {
             title: "Corewar",
             description: "Game in computer memory. Hive Helsinki Project, done in C",
             imgUrl: corewar_img,
             mp4: corewar_mp4,
+            id: 2,
           },
           {
             title: "Lem in",
             description: "Pathfinding Algorithm. Hive Helsinki Project, done in C",
             imgUrl: lemin_img,
             mp4: lemin_mp4,
+            id: 3,
           },
         ];
 
@@ -45,18 +48,21 @@ export const Projects = () => {
             description: "Online Store Design & Development, done in one weekend with PHP, HTML and CSS",
             imgUrl: onlinestore_img,
             mp4: onlinestore_mp4,
+            id: 4,
           },
           {
             title: "Github Finder",
             description: "Github Finder app design & development. ReactJS, ContextAPI, Github API",
             imgUrl: userfinder_img,
             mp4: userfinder_mp4,
+            id: 5,
           },
           {
             title: "Arkki",
             description: "WIP. Arkki app design & development. ReactJS, MongoDB",
             imgUrl: arkki_img,
             mp4: arkki_mp4,
+            id: 6,
           },
         ];
 
@@ -66,79 +72,79 @@ export const Projects = () => {
             description: "WIP, Playble CV, Python, Pygame",
             imgUrl: cvgame_img,
             mp4: cvgame_mp4,
+            Id: 7,
           },
         ];
 
 
 
-    return (
-        <section className="project" id="projects">
-          <Container>
-            <Row>
-              <Col size={12}>
-                    <h2>Projects</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                      <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                        <Nav.Item>
-                          <Nav.Link eventKey="first">ReactJS, HTML, PHP</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                          <Nav.Link eventKey="second">C/C++</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                          <Nav.Link eventKey="third">Python</Nav.Link>
-                        </Nav.Item>
-                      </Nav>
-                      <Tab.Content id="slideInUp" className="tab-content">
-                        <Tab.Pane eventKey="first">
-                          <Row>
-                            {
-                              projects_react.map((project, index) => {
-                                return (
-                                  <ProjectCard
-                                    key={index}
-                                    {...project}
-                                    />
-                                )
-                              })
-                            }
-                          </Row>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="second">
-                        <Row>
-                            {
-                              projects_c.map((project, index) => {
-                                return (
-                                  <ProjectCard
-                                    key={index}
-                                    {...project}
-                                    />
-                                )
-                              })
-                            }
-                          </Row>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="third">
-                        <Row>
-                            {
-                              projects_py.map((project, index) => {
-                                return (
-                                  <ProjectCard
-                                    key={index}
-                                    {...project}
-                                    />
-                                )
-                              })
-                            }
-                          </Row>
-                        </Tab.Pane>
-                      </Tab.Content>
-                    </Tab.Container>
-              </Col>
-            </Row>
-          </Container>
-          <img className="background-image-right" src={bgimg}></img>
-        </section>
-      )
-    }
+        return (
+          <section className="project" id="projects">
+            <Container>
+              <Row>
+                <Col size={12}>
+                      <h2>Projects</h2>
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                      <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                        <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                          <Nav.Item>
+                            <Nav.Link eventKey="first">Full Stack</Nav.Link>
+                          </Nav.Item>
+                          <Nav.Item>
+                            <Nav.Link eventKey="second">Back-end</Nav.Link>
+                          </Nav.Item>
+                          <Nav.Item>
+                            <Nav.Link eventKey="third">else</Nav.Link>
+                          </Nav.Item>
+                        </Nav>
+                        <Tab.Content id="slideInUp" className={"animate__animated animate__slideInUp"}>
+                          <Tab.Pane eventKey="first">
+                            <Row>
+                              {
+                                projects_react.map((project, index) => {
+                                  return (
+                                    <ProjectCard
+                                      key={index}
+                                      {...project}
+                                      />
+                                  )
+                                })
+                              }
+                            </Row>
+                          </Tab.Pane>
+                          <Tab.Pane eventKey="second">
+                            <Row>
+                              {
+                                projects_c.map((project, index) => {
+                                  return (
+                                    <ProjectCard
+                                      key={index}
+                                      {...project}
+                                      />
+                                  )
+                                })
+                              }
+                            </Row>                          </Tab.Pane>
+                          <Tab.Pane eventKey="third">
+                            <Row>
+                              {
+                                projects_py.map((project, index) => {
+                                  return (
+                                    <ProjectCard
+                                      key={index}
+                                      {...project}
+                                      />
+                                  )
+                                })
+                              }
+                            </Row>
+                          </Tab.Pane>
+                        </Tab.Content>
+                      </Tab.Container>
+                </Col>
+              </Row>
+            </Container>
+            <img className="background-image-right" src={bgimg}></img>
+          </section>
+        )
+      }
