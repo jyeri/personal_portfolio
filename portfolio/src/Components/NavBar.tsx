@@ -8,35 +8,34 @@ import github from '../assets/reshot-icon-github.svg';
 import instagram from '../assets/reshot-icon-instagram.svg';
 import spotify from '../assets/reshot-icon-spotify.svg';
 import steam from '../assets/reshot-icon-steam.svg';
-import JYRI from '../assets/JYRI-txt.svg';
+import JYRI from '../assets/bw-logo.png';
 import programmer from '../assets/reshot-icon-programmer.svg';
 import arkkiwhite from '../assets/arkki-logo-white.svg';
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
-  const [ scrolled, setScroll ] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-        if(window.scrollY > 50) {
-            setScroll(true);
-        } else {
-            setScroll(false);
-        }
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     }
-    window.addEventListener('scrolled', onScroll);
 
-    return () => {
-        window.removeEventListener('scrolled', onScroll);
-    }
-}, [])
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [])
 
 const onUpdateActiveLink = (link: string) => {
     setActiveLink(link);
 }
 
   return (
-    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="/">
           <div className='page-logo'>

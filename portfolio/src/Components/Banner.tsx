@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { ArrowRightCircle } from "react-bootstrap-icons"
-import headerImg from '../assets/reshot-icon-thinking-code.svg'
+import BannerImg1 from "../assets/cr_arkki.png"
+import BannerImg2 from "../assets/cr_bw.png"
+import BannerImg3 from "../assets/cr_hive.png"
+import BannerImg4 from "../assets/cr_jalkapallo.png"
+import BannerImg5 from "../assets/cr_niji.png"
+import BannerImg6 from '../assets/cr_niji2.png'
 
 
 export const Banner = () => {
@@ -16,9 +21,9 @@ export const Banner = () => {
         let ticker = setInterval(() => {
             tick();
         }, delta);
-
+    
         return () => { clearInterval(ticker) };
-    }, [text])
+    }, [text, isDeleting, loopNum, delta]);
 
     const tick = () => {
         let i = loopNum % toRotate.length;
@@ -55,7 +60,28 @@ export const Banner = () => {
                         <button onClick={() => console.log('Hire me')}>Hire me <ArrowRightCircle size={25}/></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="header img" />
+                        <div className="header-img">
+                            <ul>
+                                <li>
+                                    <img src={BannerImg1} alt="Image 1"/>
+                                </li>
+                                <li>
+                                    <img src={BannerImg2} alt="Image 2"/>
+                                </li>
+                                <li>
+                                    <img src={BannerImg3} alt="Image 3"/>
+                                </li>
+                                <li>
+                                    <img src={BannerImg4} alt="Image 4"/>
+                                </li>
+                                <li>
+                                    <img src={BannerImg5} alt="Image 5"/>
+                                </li>
+                                <li>
+                                    <img src={BannerImg6} alt="Image 6"/>
+                                </li>
+                            </ul>
+                        </div>
                     </Col>
                 </Row>
             </Container>

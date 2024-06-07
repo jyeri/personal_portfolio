@@ -1,4 +1,4 @@
-import { Col, Form } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 interface IcardProps {
     title: string,
@@ -32,6 +32,11 @@ export const ProjectCard: React.FunctionComponent<IcardProps> = ({ title, descri
         console.log('pause');
       };
 
+      const handleCanPlay = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+        handleOnMouseOver(e as React.MouseEvent<HTMLVideoElement>);
+        console.log('can play');
+      };
+
       return (
         <Col size={12} sm={6} md={4}>
           <div className="proj-imgbx">
@@ -42,6 +47,7 @@ export const ProjectCard: React.FunctionComponent<IcardProps> = ({ title, descri
                 muted // Needs to be there to be able to play
                 onMouseOver={handleOnMouseOver}
                 onMouseOut={handleOnMouseOut}
+                onCanPlay={handleCanPlay}
             >
                 <source src={mp4} type='video/mp4' />
             </video>
