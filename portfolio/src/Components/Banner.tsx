@@ -16,6 +16,8 @@ export const Banner = () => {
     const [text, setText] = useState(toRotate[0]);
     const period = 2000;
     const [delta, setDelta] = useState(300 - Math.random() * 100);
+    const [activeImg, setActiveImg] = useState('BannerImg2');
+    const [description, setDescription] = useState('I am enthusiastic about coding and problem solving, at this moment my strongest areas are: C, ReactJS, HTML, CSS. I am also familiar with Python, TypeScript, PHP, SQL, MongoDB, NodeJS, Git, Docker, Azure, Vercel, Cypress, ETC. Get to know me little better by clicking other pictures.');
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -49,6 +51,33 @@ export const Banner = () => {
         }
     }
 
+    const onUpdateActiveImg = (Img: string) => {
+        setActiveImg(Img);
+        onUpdateText(Img);
+    }
+
+    const onUpdateText = (despcription: string) => {
+        if (despcription === 'BannerImg1') {
+            despcription = 'I am one of the founders of amateur football club, Arkki. We are playing in 5th division in Helsinki. Project is aimed to provide low theshold exercise and community to people moving in from elsewhere.';
+        }
+        if (despcription === 'BannerImg2') {
+            despcription = 'I am enthusiastic about coding and problem solving, at this moment my strongest areas are: C, ReactJS, HTML, CSS. I am also familiar with Python, TypeScript, PHP, SQL, MongoDB, NodeJS, Git, Docker, Azure, Vercel, Cypress, ETC. Get to know me little better by clicking other pictures.';
+        }
+        if (despcription === 'BannerImg3') {
+            despcription = 'My interest of coding sparked while working as web-dev/it-guy on somefix, then journey in coding continued in Hive Helsinki, where I learned to code in C. I am grateful for the experience and the people I met there. I am looking forward to the next steps in my coding journey.';
+        }
+        if (despcription === 'BannerImg4') {
+            despcription = 'Football has been big part of my life since I was a kid, and my big dream would be possibilty to combine these two passions. Coding and sports.';
+        }
+        if (despcription === 'BannerImg5') {
+            despcription = 'I have a dog, called Niji. She is a 5 year old, rescued Husky-Malamute. Including her, every single doggo is awesome.';
+        }
+        if (despcription === 'BannerImg6') {
+            despcription = 'More than developer I see myself as problem solver. I am always looking for new challenges and ways to improve my skills. Most of the languages and tools I know of I see as tools, but the main part is to know how to solve the problem.';
+        }
+        setDescription(despcription);
+    }
+
     return (
         <section className="banner" id="home">
             <Container>
@@ -56,29 +85,29 @@ export const Banner = () => {
                     <Col xs={12} md={6} xl={7}>
                         <span className="tagline">I'd like to welcome you to my life</span>
                         <h1>{`I am Jyri, also known as `}<span className="wrap">{text}</span></h1>
-                        <p>Full stack developer with a passion for creating beautiful and functional user experiences.</p>
+                        <p>{description}</p>
                         <button onClick={() => console.log('Hire me')}>Hire me <ArrowRightCircle size={25}/></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                         <div className="header-img">
                             <ul>
                                 <li>
-                                    <img src={BannerImg1} alt="Image 1"/>
+                                    <img src={BannerImg1} alt="Image 1" className={activeImg === 'BannerImg1' ? 'active BannerImg' : 'BannerImg'} onClick={() => onUpdateActiveImg('BannerImg1')}/>
                                 </li>
                                 <li>
-                                    <img src={BannerImg2} alt="Image 2"/>
+                                    <img src={BannerImg2} alt="Image 2" className={activeImg === 'BannerImg2' ? 'active BannerImg' : 'BannerImg'} onClick={() => onUpdateActiveImg('BannerImg2')}/>
                                 </li>
                                 <li>
-                                    <img src={BannerImg3} alt="Image 3"/>
+                                    <img src={BannerImg3} alt="Image 3" className={activeImg === 'BannerImg3' ? 'active BannerImg' : 'BannerImg'} onClick={() => onUpdateActiveImg('BannerImg3')}/>
                                 </li>
                                 <li>
-                                    <img src={BannerImg4} alt="Image 4"/>
+                                    <img src={BannerImg4} alt="Image 4" className={activeImg === 'BannerImg4' ? 'active BannerImg' : 'BannerImg'} onClick={() => onUpdateActiveImg('BannerImg4')}/>
                                 </li>
                                 <li>
-                                    <img src={BannerImg5} alt="Image 5"/>
+                                    <img src={BannerImg5} alt="Image 5" className={activeImg === 'BannerImg5' ? 'active BannerImg' : 'BannerImg'} onClick={() => onUpdateActiveImg('BannerImg5')}/>
                                 </li>
                                 <li>
-                                    <img src={BannerImg6} alt="Image 6"/>
+                                    <img src={BannerImg6} alt="Image 6" className={activeImg === 'BannerImg6' ? 'active BannerImg' : 'BannerImg'} onClick={() => onUpdateActiveImg('BannerImg6')}/>
                                 </li>
                             </ul>
                         </div>

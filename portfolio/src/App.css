@@ -526,9 +526,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
   border-radius: 30px;
   height: 300px;
+  width: 250px;
   overflow: hidden;
   margin-bottom: 24px;
 }
+
 .proj-imgbx img {
   width: 100%;
   height: 100%;
@@ -569,12 +571,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.5s ease-in-out;
+  transition: 0.7s ease-in-out;
   opacity: 1;
   width: 100%;
 }
 .proj-imgbx:hover .proj-txtx {
-  top: 25%;
+  top: -50px;
   opacity: 0;
 }
 .proj-txtx h4 {
@@ -596,6 +598,49 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 35%;
   right: 0;
   z-index: -4;
+}
+
+/********* Custom Button ***********/
+
+.button-custom {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-custom:after {
+  content: "";
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  width: 100%;
+  border-radius: 5px;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-custom:hover:after {
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+}
+
+@media (min-width: 768px) {
+  .button-custom {
+    padding: 13px 50px 13px;
+  }
 }
 
 /************ Forms Css ************/

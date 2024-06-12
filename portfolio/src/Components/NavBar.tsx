@@ -7,10 +7,7 @@ import linkedin from '../assets/reshot-icon-linkedin.svg';
 import github from '../assets/reshot-icon-github.svg';
 import instagram from '../assets/reshot-icon-instagram.svg';
 import spotify from '../assets/reshot-icon-spotify.svg';
-import steam from '../assets/reshot-icon-steam.svg';
 import JYRI from '../assets/bw-logo.png';
-import programmer from '../assets/reshot-icon-programmer.svg';
-import arkkiwhite from '../assets/arkki-logo-white.svg';
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
@@ -53,11 +50,10 @@ const onUpdateActiveLink = (link: string) => {
             </Nav>
             <span className="navbar-text">
             <div className='social-icon'>
-                <a href='#' className='git'><img src={github} alt=''/></a>
-                <a href='#' className='insta'><img src={instagram} alt=''/></a>
-                <a href='#' className='lin'><img src={linkedin} alt=''/></a>
-                <a href='#' className='spotify'><img src={spotify} alt=''/></a>
-                <a href='#' className='steam'><img src={steam} alt=''/></a>
+                <a target='_blank' href='https://github.com/jyeri' className='git'><img src={github} alt=''/></a>
+                <a target='_blank' href='https://instagram.com/jyerirummukainen' className='insta'><img src={instagram} alt=''/></a>
+                <a target='_blank' href='https://www.linkedin.com/in/jrummukainen/' className='lin'><img src={linkedin} alt=''/></a>
+                <a target='_blank' href='https://open.spotify.com/user/31syrrea63mvyjwb7ujvpqynbq4u?si=a9c1ce80fc3f4864' className='spotify'><img src={spotify} alt=''/></a>
             </div>
           <button className='vvd-btn' onClick={() => console.log('connect click')}><span>Contact Me</span></button>
           </span>
