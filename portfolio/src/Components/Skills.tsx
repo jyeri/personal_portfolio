@@ -36,11 +36,11 @@ export const Skills = () => {
                             <Carousel responsive={responsive} infinite={true} className="skill-slider">
                                 <div className="item">
                                     <CircularProgress percentage={65}/>
-                                    <h5>React</h5>
+                                    <h5>ReactJS</h5>
                                 </div>
                                 <div className="item">
                                     <CircularProgress percentage={65}/>
-                                    <h5>JS/TS</h5>
+                                    <h5>Javascript/Typescript</h5>
                                 </div>
                                 <div className="item">
                                     <CircularProgress percentage={85}/>

@@ -168,7 +168,7 @@ span.navbar-text {
 }
 
 .page-logo img {
-	width: 50%;
+	width: 80%;
 	z-index: 1;
   opacity: 1;
   filter: none;
@@ -304,6 +304,29 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1.5em;
   width: 96%;
 }
+
+.banner .animate-text {
+  animation: color-change 1.5s ;
+}
+
+@keyframes color-change {
+  0% {
+    color: #ffffff;
+  }
+  25% {
+    color: #e8e8e8;
+  }
+  50% {
+    color: #cac9c9;
+  }
+  75% {
+    color: #aaaaaa;
+  }
+  100% {
+    color: #B8B8B8;
+  }
+}
+
 .banner button {
   color: #fff;
   font-weight: 700;
@@ -323,16 +346,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: 25px;
 }
 
-.banner-img {
+.header-img {
   display:flex;
   justify-content:center;
   align-items:center;
-  overflow:hidden;
+  height: 100%;
 }
 
 .banner ul {
-  width: 30vmin;
-  height: 30vmin;
+  width: 36vmin;
+  height: 36vmin;
   position: relative;
   filter: drop-shadow(0 0 10px hsla(0, 0%, 0%, 0.3));
   animation: r 4s forwards;
@@ -364,6 +387,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     calc(100% - var(--aw) + 1px) 0
   );
   transform-origin: center;
+  filter: grayscale(100%);
 }
 
 .banner li:nth-of-type(1) {
@@ -398,7 +422,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .banner li:hover img {
   transform: scale(1.65);
-  transition: all 0.5s ease-out;
+  filter: grayscale(0%);
+  transition: all 0.7s ease-out;
 }
 
 @keyframes r {
@@ -413,6 +438,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+}
+
+.banner-arrow {
+  position: absolute;
+  top: 10%; /* Adjust this value to move the arrow up or down */
+  left: 85%; /* Adjust this value to center the arrow horizontally */
+  transform: translate(-50%, -50%); /* Centers the arrow */
+  transform: rotate(-25deg);
+  text-align: center; /* Center the text */
+  /* Other styles */
+  width: 6%;
+}
+
+.banner-arrow img {
+  width: 80%;
+  height: auto;
+  filter: invert(100%);
 }
 
 /************ Skills Css ************/
@@ -524,6 +566,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx {
   position: relative;
+  border: #8c8c8c solid 2px;
   border-radius: 30px;
   height: 300px;
   width: 250px;
@@ -574,6 +617,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.7s ease-in-out;
   opacity: 1;
   width: 100%;
+}
+.proj-imgbx:hover {
+  border: #dddddd solid 2px;
+  transition: 0.2s ease-in-out;
 }
 .proj-imgbx:hover .proj-txtx {
   top: -50px;

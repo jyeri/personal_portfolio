@@ -7,23 +7,25 @@ import BannerImg3 from "../assets/cr_hive.png"
 import BannerImg4 from "../assets/cr_jalkapallo.png"
 import BannerImg5 from "../assets/cr_niji.png"
 import BannerImg6 from '../assets/cr_niji2.png'
+import arrow from '../assets/handdrawnarrow.svg'
 
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const toRotate = ["Problem Solver", "Coder", "Web Developer", "Software Developer", "IT-GUY", "Full Stack Developer", "Tech Enthusiast"];
-    const [text, setText] = useState(toRotate[0]);
+    const [text, setText] = useState('');
     const period = 2000;
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const [activeImg, setActiveImg] = useState('BannerImg2');
-    const [description, setDescription] = useState('I am enthusiastic about coding and problem solving, at this moment my strongest areas are: C, ReactJS, HTML, CSS. I am also familiar with Python, TypeScript, PHP, SQL, MongoDB, NodeJS, Git, Docker, Azure, Vercel, Cypress, ETC. Get to know me little better by clicking other pictures.');
+    const [description, setDescription] = useState('Get to know me little better by clicking other pictures. I am enthusiastic about coding and problem solving, at this moment my strongest areas are: C, ReactJS, HTML, CSS. I am also familiar with Python, TypeScript, PHP, SQL, MongoDB, NodeJS, Git, Docker, Azure, Vercel, Cypress, ETC.');
+    const [animateDescription, setAnimateDescription] = useState(false); // Added state for animation control
 
     useEffect(() => {
         let ticker = setInterval(() => {
             tick();
         }, delta);
-    
+
         return () => { clearInterval(ticker) };
     }, [text, isDeleting, loopNum, delta]);
 
@@ -54,28 +56,30 @@ export const Banner = () => {
     const onUpdateActiveImg = (Img: string) => {
         setActiveImg(Img);
         onUpdateText(Img);
+        setAnimateDescription(true); // Trigger animation
+        setTimeout(() => setAnimateDescription(false), 1000); // Reset animation state after 1s
     }
 
-    const onUpdateText = (despcription: string) => {
-        if (despcription === 'BannerImg1') {
-            despcription = 'I am one of the founders of amateur football club, Arkki. We are playing in 5th division in Helsinki. Project is aimed to provide low theshold exercise and community to people moving in from elsewhere.';
+    const onUpdateText = (description: string) => {
+        if (description === 'BannerImg1') {
+            description = 'I am one of the founders of amateur football club, Arkki. We are playing in 5th division in Helsinki. Project is aimed to provide low threshold exercise and community to people moving in from elsewhere.';
         }
-        if (despcription === 'BannerImg2') {
-            despcription = 'I am enthusiastic about coding and problem solving, at this moment my strongest areas are: C, ReactJS, HTML, CSS. I am also familiar with Python, TypeScript, PHP, SQL, MongoDB, NodeJS, Git, Docker, Azure, Vercel, Cypress, ETC. Get to know me little better by clicking other pictures.';
+        if (description === 'BannerImg2') {
+            description = 'Get to know me little better by clicking other pictures. I am enthusiastic about coding and problem solving, at this moment my strongest areas are: C, ReactJS, HTML, CSS. I am also familiar with Python, TypeScript, PHP, SQL, MongoDB, NodeJS, Git, Docker, Azure, Vercel, Cypress, ETC.';
         }
-        if (despcription === 'BannerImg3') {
-            despcription = 'My interest of coding sparked while working as web-dev/it-guy on somefix, then journey in coding continued in Hive Helsinki, where I learned to code in C. I am grateful for the experience and the people I met there. I am looking forward to the next steps in my coding journey.';
+        if (description === 'BannerImg3') {
+            description = 'My interest of coding sparked while working as web-dev/it-guy on somefix, then journey in coding continued in Hive Helsinki, where I learned to code in C. I am grateful for the experience and the people I met there. I am looking forward to the next steps in my coding journey.';
         }
-        if (despcription === 'BannerImg4') {
-            despcription = 'Football has been big part of my life since I was a kid, and my big dream would be possibilty to combine these two passions. Coding and sports.';
+        if (description === 'BannerImg4') {
+            description = 'Football has been big part of my life since I was a kid, and my big dream would be possibility to combine these two passions. Coding and sports.';
         }
-        if (despcription === 'BannerImg5') {
-            despcription = 'I have a dog, called Niji. She is a 5 year old, rescued Husky-Malamute. Including her, every single doggo is awesome.';
+        if (description === 'BannerImg5') {
+            description = 'I have a dog, called Niji. She is a 5 year old, rescued Husky-Malamute. Including her, every single doggo is awesome.';
         }
-        if (despcription === 'BannerImg6') {
-            despcription = 'More than developer I see myself as problem solver. I am always looking for new challenges and ways to improve my skills. Most of the languages and tools I know of I see as tools, but the main part is to know how to solve the problem.';
+        if (description === 'BannerImg6') {
+            description = 'More than developer I see myself as problem solver. I am always looking for new challenges and ways to improve my skills. Most of the languages and tools I know of I see as tools, but the main part is to know how to solve the problem.';
         }
-        setDescription(despcription);
+        setDescription(description);
     }
 
     return (
@@ -84,8 +88,9 @@ export const Banner = () => {
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                         <span className="tagline">I'd like to welcome you to my life</span>
-                        <h1>{`I am Jyri, also known as `}<span className="wrap">{text}</span></h1>
-                        <p>{description}</p>
+                        <h1>{`I am Jyri, also known as `}</h1>
+                        <h1><span className="wrap">{text}</span></h1>
+                        <p className={animateDescription ? 'animate-text' : ''}>{description}</p>
                         <button onClick={() => console.log('Hire me')}>Hire me <ArrowRightCircle size={25}/></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
