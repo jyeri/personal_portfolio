@@ -18,15 +18,15 @@ export const Banner = () => {
     const period = 2000;
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const [activeImg, setActiveImg] = useState('BannerImg2');
-    const [description, setDescription] = useState('Get to know me little better by clicking other pictures. I am enthusiastic about coding and problem solving, at this moment my strongest areas are: C, ReactJS, HTML, CSS. I am also familiar with Python, TypeScript, PHP, SQL, MongoDB, NodeJS, Git, Docker, Azure, Vercel, Cypress, ETC.');
-    const [animateDescription, setAnimateDescription] = useState(false); // Added state for animation control
+    const [description, setDescription] = useState('Get to know me little better by clicking other pictures. All of them contains little bit of me.');
+    const [animateDescription, setAnimateDescription] = useState(false);
 
     useEffect(() => {
         let ticker = setInterval(() => {
             tick();
         }, delta);
 
-        return () => { clearInterval(ticker) };
+        return () => clearInterval(ticker);
     }, [text, isDeleting, loopNum, delta]);
 
     const tick = () => {
@@ -36,51 +36,34 @@ export const Banner = () => {
 
         setText(updText);
 
-        if(isDeleting) {
-            setDelta(prevDelta => prevDelta /2);
-        }
-
-        if(!isDeleting && updText === fullText) {
+        if (!isDeleting && updText === fullText) {
             setIsDeleting(true);
             setDelta(period);
-        } else if(isDeleting && updText === '') {
+        } else if (isDeleting && updText === '') {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
             setDelta(150);
         }
-        if (loopNum === toRotate.length + 1) {
-            setLoopNum(0);
-        }
-    }
+    };
 
     const onUpdateActiveImg = (Img: string) => {
         setActiveImg(Img);
         onUpdateText(Img);
-        setAnimateDescription(true); // Trigger animation
-        setTimeout(() => setAnimateDescription(false), 1000); // Reset animation state after 1s
-    }
+        setAnimateDescription(true);
+        setTimeout(() => setAnimateDescription(false), 1000);
+    };
 
-    const onUpdateText = (description: string) => {
-        if (description === 'BannerImg1') {
-            description = 'I am one of the founders of amateur football club, Arkki. We are playing in 5th division in Helsinki. Project is aimed to provide low threshold exercise and community to people moving in from elsewhere.';
-        }
-        if (description === 'BannerImg2') {
-            description = 'Get to know me little better by clicking other pictures. I am enthusiastic about coding and problem solving, at this moment my strongest areas are: C, ReactJS, HTML, CSS. I am also familiar with Python, TypeScript, PHP, SQL, MongoDB, NodeJS, Git, Docker, Azure, Vercel, Cypress, ETC.';
-        }
-        if (description === 'BannerImg3') {
-            description = 'My interest of coding sparked while working as web-dev/it-guy on somefix, then journey in coding continued in Hive Helsinki, where I learned to code in C. I am grateful for the experience and the people I met there. I am looking forward to the next steps in my coding journey.';
-        }
-        if (description === 'BannerImg4') {
-            description = 'Football has been big part of my life since I was a kid, and my big dream would be possibility to combine these two passions. Coding and sports.';
-        }
-        if (description === 'BannerImg5') {
-            description = 'I have a dog, called Niji. She is a 5 year old, rescued Husky-Malamute. Including her, every single doggo is awesome.';
-        }
-        if (description === 'BannerImg6') {
-            description = 'More than developer I see myself as problem solver. I am always looking for new challenges and ways to improve my skills. Most of the languages and tools I know of I see as tools, but the main part is to know how to solve the problem.';
-        }
-        setDescription(description);
-    }
+    const onUpdateText = (Img: string) => {
+        const descriptions: { [key: string]: string } = {
+            BannerImg1: 'I am one of the founders of amateur football club, Arkki. We are playing in 5th division in Helsinki. Project is aimed to provide low threshold exercise and community to people moving in from elsewhere.',
+            BannerImg2: 'I am enthusiastic about coding and problem solving, at this moment my strongest areas are: C, ReactJS, HTML, CSS. I am also familiar with Python, TypeScript, PHP, SQL, MongoDB, NodeJS, Git, Docker, Azure, Vercel, Cypress, ETC.',
+            BannerImg3: 'My interest of coding sparked while working as web-dev/it-guy on somefix, then journey in coding continued in Hive Helsinki, where I learned to code in C. I am grateful for the experience and the people I met there. I am looking forward to the next steps in my coding journey.',
+            BannerImg4: 'Football has been big part of my life since I was a kid, and my big dream would be possibility to combine these two passions. Coding and sports.',
+            BannerImg5: 'I have a dog, called Niji. She is a 5 year old, rescued Husky-Malamute. Including her, every single doggo is awesome.',
+            BannerImg6: 'More than developer I see myself as problem solver. I am always looking for new challenges and ways to improve my skills. Most of the languages and tools I know of I see as tools, but the main part is to know how to solve the problem.'
+        };
+        setDescription(descriptions[Img as keyof typeof descriptions] || 'Get to know me little better by clicking other pictures. All of them contains little bit of me.');
+    };
 
     return (
         <section className="banner" id="home">
