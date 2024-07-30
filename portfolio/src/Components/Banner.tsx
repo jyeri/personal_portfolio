@@ -15,7 +15,7 @@ export const Banner = () => {
     const [isDeleting, setIsDeleting] = useState(false);
     const toRotate = ["Problem Solver", "Coder", "Web Developer", "Software Developer", "IT-GUY", "Full Stack Developer", "Tech Enthusiast"];
     const [text, setText] = useState('');
-    const period = 2000;
+    const period = 150;
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const [activeImg, setActiveImg] = useState('BannerImg2');
     const [description, setDescription] = useState('Get to know me little better by clicking other pictures. All of them contains little bit of me.');
@@ -42,7 +42,7 @@ export const Banner = () => {
         } else if (isDeleting && updText === '') {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
-            setDelta(150);
+            setDelta(250);
         }
     };
 

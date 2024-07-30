@@ -306,7 +306,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner .wrap {
-  min-height: 50px; /* Adjust the height as needed */
+  min-height: 40px; /* Adjust the height as needed */
   display: inline-block; /* This makes min-height work for inline elements like span */
 }
 
