@@ -564,7 +564,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 0 55px 55px 0;
 }
 .proj-imgbx {
-  width: 100% !important;
+  width: 70% !important;
   position: relative;
   border: #8c8c8c solid 2px;
   border-radius: 30px;
