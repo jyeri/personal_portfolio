@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+@font-face {
+  font-family: 'Toko';
+  src: url(./assets/Teko-SemiBold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Toko';
+  src: url(./assets/Teko-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Toko';
+  src: url(./assets/Teko-Light.ttf);
+  font-weight: 300;
+}
