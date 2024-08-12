@@ -2,19 +2,19 @@
 
 @font-face {
   font-family: 'Toko';
-  src: url(./assets/Teko-SemiBold.ttf);
+  src: url(../Assets/Teko-SemiBold.ttf);
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'Toko';
-  src: url(./assets/Teko-Medium.ttf);
+  src: url(../Assets/Teko-Medium.ttf);
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Toko';
-  src: url(./assets/Teko-Light.ttf);
+  src: url(../Assets/Teko-Light.ttf);
   font-weight: 300;
 }
 
@@ -23,8 +23,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #121212 !important;
-  color: #fff !important;
   font-family: 'Toko', sans-serif !important;
 }
 
