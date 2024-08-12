@@ -12,6 +12,7 @@ export const useContactForm = () => {
 
     const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setButtonText('Sending...');
         const serviceID = 'service_n6xu9t6';
         const templateID = 'template_l6ocenu';
         const userID = '2ul_Ijm4IxKG8ENJi';
@@ -27,7 +28,7 @@ export const useContactForm = () => {
         emailJS.send(serviceID, templateID, templateParams, userID)
             .then(() => {
                 setStatus({ message: 'Message sent successfully!', success: true });
-                setButtonText('Sent');
+                setButtonText('Message sent');
             }, (error) => {
                 console.error('FAILED...', error.text);
                 setStatus({ message: 'Failed to send message. Please try again later.', success: false });

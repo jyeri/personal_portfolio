@@ -32,15 +32,15 @@ const ContactView = ({
                                         <Col size={12} sm={6} className="px-1">
                                             <input type="tel" value={phone} placeholder="Phone Number" onChange={(e) => setPhone(e.target.value)}/>
                                         </Col>
-                                        <Col size={12} className="px-1">
+                                        <Col size={12} className="px-2">
                                             <textarea value={message} placeholder="Message" onChange={(e) => setMessage(e.target.value)}></textarea>
                                             <button type="submit"><span>{buttonText}</span></button>
                                         </Col>
                                         {
                                             status.message &&
-                                            <Col>
+                                            <div className='status-message'>
                                                 <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                                            </Col>
+                                            </div>
                                         }
                                     </Row>
                                 </form>
