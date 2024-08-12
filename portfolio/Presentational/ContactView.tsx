@@ -21,7 +21,7 @@ const ContactView = ({
                         {({ isVisible }) =>
                             <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                 <h2>Get In Touch</h2>
-                                <form ref={form} onSubmit={handleSubmit}>
+                                <form onSubmit={handleSubmit}>
                                     <Row>
                                         <Col size={12} sm={6} className="px-1">
                                             <input type="text" value={name} placeholder="Full Name" onChange={(e) => setName(e.target.value)} />

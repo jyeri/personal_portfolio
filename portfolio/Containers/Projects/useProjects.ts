@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { projects_react, projects_c, projects_py } from "../../Data/ProjectsData";
+import { useState } from 'react';
+import { projects_c, projects_react, projects_py } from '../../Data/ProjectsData';
 
 export const useProjects = () => {
     const [showModal, setShowModal] = useState(false);
@@ -10,15 +10,17 @@ export const useProjects = () => {
         setShowModal(true);
     };
 
-    const handleCloseModal = () => setShowModal(false);
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
 
     return {
         showModal,
         currentProject,
         handleCardClick,
         handleCloseModal,
-        projects_react,
         projects_c,
+        projects_react,
         projects_py,
     };
 };

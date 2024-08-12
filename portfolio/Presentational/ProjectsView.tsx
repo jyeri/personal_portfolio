@@ -1,27 +1,13 @@
 import React from 'react';
 import { Row, Col, Container, Tab, Nav, Carousel, Modal, Button } from "react-bootstrap";
-import { ProjectCard } from "../Containers/Projects/ProjectsCard";
-import { ProjectsContainer } from "../Containers/Projects/Projects"; // Adjust import path as necessary
+import ProjectCard from "../Containers/Projects/ProjectCard";
+import github from '../Assets/github-icon-1.svg';
+import Vercel from '../Assets/Vercel.svg';
+import { Projects } from "../Containers/Projects/Projects"; // Adjust import path as necessary
 
-interface IProjectsViewProps {
-    showModal: boolean;
-    currentProject: Project | null;
-    onCardClick: (project: Project) => void;
-    onCloseModal: () => void;
-    projects_react: Project[];
-    projects_c: Project[];
-    projects_py: Project[];
-}
 
-const ProjectsView: React.FC<IProjectsViewProps> = ({
-    showModal,
-    currentProject,
-    onCardClick,
-    onCloseModal,
-    projects_react,
-    projects_c,
-    projects_py,
-}) => (
+export const ProjectsView = ({ showModal, currentProject, onCardClick, onCloseModal, projects_c, projects_react, projects_py }) => (
+    <div>
     <section className="project" id="projects">
             <Container>
                 <Row>
@@ -47,7 +33,7 @@ const ProjectsView: React.FC<IProjectsViewProps> = ({
                                             <ProjectCard
                                                 key={index}
                                                 {...project}
-                                                onCardClick={handleCardClick}
+                                                onCardClick={onCardClick}
                                             />
                                         ))}
                                     </Row>
@@ -58,7 +44,7 @@ const ProjectsView: React.FC<IProjectsViewProps> = ({
                                             <ProjectCard
                                                 key={index}
                                                 {...project}
-                                                onCardClick={handleCardClick}
+                                                onCardClick={onCardClick}
                                             />
                                         ))}
                                     </Row>
@@ -69,7 +55,7 @@ const ProjectsView: React.FC<IProjectsViewProps> = ({
                                             <ProjectCard
                                                 key={index}
                                                 {...project}
-                                                onCardClick={handleCardClick}
+                                                onCardClick={onCardClick}
                                             />
                                         ))}
                                     </Row>
@@ -79,7 +65,7 @@ const ProjectsView: React.FC<IProjectsViewProps> = ({
                     </Col>
                 </Row>
             </Container>
-            <Modal show={showModal} onHide={handleCloseModal}>
+            <Modal show={showModal} onHide={onCloseModal}>
                 <Modal.Header closeButton>
                     <Modal.Title>{currentProject?.title}</Modal.Title>
                 </Modal.Header>
@@ -101,13 +87,14 @@ const ProjectsView: React.FC<IProjectsViewProps> = ({
                         <a target='_blank' href={currentProject?.vercel_url} className='vercel'><img className="modal-linkbox__icon" src={Vercel} alt=''/><span className="modal-linkbox__text">Vercel</span></a>)}
                       </div>
                       )}
-                      <Button className="close-bottom" variant="secondary" onClick={handleCloseModal}>
+                      <Button className="close-bottom" variant="secondary" onClick={onCloseModal}>
                         Close
                       </Button>
                     </div>
                 </Modal.Body>
             </Modal>
     </section>
+    </div>
 );
 
 export default ProjectsView;

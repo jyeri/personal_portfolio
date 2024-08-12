@@ -1,17 +1,17 @@
-import pushSwap_img from '../assets/projects/pushSwap/pushSwap_img.png';
-import pushSwap_mp4 from '../assets/projects/pushSwap/pushSwap_mp4.mp4';
-import corewar_img from '../assets/projects/corewar/corewar_img.png';
-import corewar_mp4 from '../assets/projects/corewar/corewar_mp4.mp4';
-import lemin_img from '../assets/projects/lemin/lemin_img.png';
-import lemin_mp4 from '../assets/projects/lemin/lemin_mp4.mp4';
-import onlinestore_img from '../assets/projects/onlinestore/onlinestore_img.png';
-import onlinestore_mp4 from '../assets/projects/onlinestore/onlinestore_mp4.mp4';
-import userfinder_img from '../assets/projects/userfinder/userfinder_img.png';
-import userfinder_mp4 from '../assets/projects/userfinder/userfinder_mp4.mp4';
-import arkki_img from '../assets/projects/arkki/arkki_img.png';
-import arkki_mp4 from '../assets/projects/arkki/arkki_mp4.mp4';
-import cvgame_img from '../assets/projects/cvgame/cvgame_img.png';
-import cvgame_mp4 from '../assets/projects/cvgame/cvgame_mp4.mp4';
+import pushSwap_img from '../Assets/projects/pushSwap/pushSwap_img.png';
+import pushSwap_mp4 from '../Assets/projects/pushSwap/pushSwap_mp4.mp4';
+import corewar_img from '../Assets/projects/corewar/corewar_img.png';
+import corewar_mp4 from '../Assets/projects/corewar/corewar_mp4.mp4';
+import lemin_img from '../Assets/projects/lemin/lemin_img.png';
+import lemin_mp4 from '../Assets/projects/lemin/lemin_mp4.mp4';
+import onlinestore_img from '../Assets/projects/onlinestore/onlinestore_img.png';
+import onlinestore_mp4 from '../Assets/projects/onlinestore/onlinestore_mp4.mp4';
+import userfinder_img from '../Assets/projects/userfinder/userfinder_img.png';
+import userfinder_mp4 from '../Assets/projects/userfinder/userfinder_mp4.mp4';
+import arkki_img from '../Assets/projects/arkki/arkki_img.png';
+import arkki_mp4 from '../Assets/projects/arkki/arkki_mp4.mp4';
+import cvgame_img from '../Assets/projects/cvgame/cvgame_img.png';
+import cvgame_mp4 from '../Assets/projects/cvgame/cvgame_mp4.mp4';
   
     export const projects_c = [
         {
