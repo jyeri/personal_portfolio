@@ -21,7 +21,7 @@ export const ProjectsView = ({ showModal, currentProject, onCardClick, onCloseMo
                                     <Nav.Link eventKey="second">Back-end</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="third">Python 'n else</Nav.Link>
+                                    <Nav.Link eventKey="third">Python</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                             <Tab.Content id="slideInUp" className={"animate__animated animate__slideInUp"}>

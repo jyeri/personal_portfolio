@@ -269,11 +269,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
-  padding: 200px 0 100px 0;
+  padding: 75px 0 100px 0;
   background-image: url('./assets/black-bg.png');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 .banner ul li {
@@ -538,13 +539,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project .nav.nav-pills .nav-link::before {
     content: "";
     position: absolute;
+    border-radius: 0px;
+    border: ;
     width: 0;
     height: 100%;
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
     top: 0;
     left: 0;
     z-index: -1;
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .project .nav.nav-pills .nav-link.active::before {
     width: 100% !important;
@@ -562,7 +565,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .nav-link#projects-tabs-tab-third {
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0 55px 55px 0;
+  border-radius: 0px 55px 55px 0px;
 }
 .proj-imgbx {
   margin: 0 auto;
