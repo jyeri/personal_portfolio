@@ -12,6 +12,14 @@ export const useContactForm = () => {
 
     const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        // Check if all fields are filled
+        if (!name.trim() || !email.trim() || !phone.trim() || !message.trim()) {
+            setStatus({ message: 'Please fill in all fields.', success: false });
+            setButtonText('Send');
+            return; // Prevent sending the email if validation fails
+        }
+
         setButtonText('Sending...');
         const serviceID = 'service_n6xu9t6';
         const templateID = 'template_l6ocenu';
