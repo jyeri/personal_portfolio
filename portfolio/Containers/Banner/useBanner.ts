@@ -12,7 +12,7 @@ export const useBanner = () => {
     const [animateDescription, setAnimateDescription] = useState(false);
 
     useEffect(() => {
-        let ticker = setInterval(() => {
+        const ticker = setInterval(() => {
             tick();
         }, delta);
 
@@ -20,9 +20,9 @@ export const useBanner = () => {
     }, [text, isDeleting, loopNum, delta]);
 
     const tick = () => {
-        let i = loopNum % toRotate.length;
-        let fullText = toRotate[i];
-        let updText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+        const i = loopNum % toRotate.length;
+        const fullText = toRotate[i];
+        const updText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
 
         setText(updText);
 

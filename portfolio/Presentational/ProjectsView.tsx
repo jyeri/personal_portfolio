@@ -1,10 +1,8 @@
 import React from 'react';
-import { Row, Col, Container, Tab, Nav, Carousel, Modal, Button } from "react-bootstrap";
+import { Row, Col, Container, Tab, Nav, Modal, Button } from "react-bootstrap";
 import ProjectCard from "../Containers/Projects/ProjectCard";
 import github from '../Assets/github-icon-1.svg';
 import Vercel from '../Assets/Vercel.svg';
-import { Projects } from "../Containers/Projects/Projects"; // Adjust import path as necessary
-
 
 export const ProjectsView = ({ showModal, currentProject, onCardClick, onCloseModal, projects_c, projects_react, projects_py }) => (
     <div>
