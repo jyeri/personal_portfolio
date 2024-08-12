@@ -270,7 +270,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
-  padding: 75px 0 100px 0;
+  position: relative;
+  padding: 10.5em 0 100px 0;
   background-image: url('./assets/black-bg.png');
   background-position: top center;
   background-size: cover;
