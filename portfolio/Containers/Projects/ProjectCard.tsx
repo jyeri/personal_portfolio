@@ -1,23 +1,16 @@
 import React from 'react';
+import { IProject } from '../../Data/ProjectsData'; // Import the IProject interface
 import { useProjectCard } from './useProjectCard';
 import ProjectCardView from '../../Presentational/ProjectCardView';
 
-interface IProjectCardProps {
-    title: string;
-    description: string;
-    l_desc: string;
-    imgUrl: string;
-    github_url: string | null;
-    vercel_url: string | null;
-    mp4: string;
-    id: number;
-    onCardClick?: (project: any) => void;
+interface IProjectCardProps extends IProject {
+    onCardClick?: (project: IProject) => void;
 }
 
-const ProjectCard: React.FC<IProjectCardProps> = (props) => {
+const ProjectCard: React.FC<IProjectCardProps> = React.memo((props) => {
     const { handleOnMouseOver, handleOnMouseOut } = useProjectCard();
 
     return <ProjectCardView {...props} onMouseOver={handleOnMouseOver} onMouseOut={handleOnMouseOut} />;
-};
+});
 
 export default ProjectCard;

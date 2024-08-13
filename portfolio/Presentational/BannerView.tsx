@@ -64,4 +64,5 @@ const BannerView: React.FunctionComponent<BannerViewProps> = ({ text, descriptio
     );
 };
 
-export default BannerView;
+const BannerViewMemo = React.memo(BannerView);
+export default BannerViewMemo;

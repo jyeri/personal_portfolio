@@ -1,21 +1,14 @@
 import React from 'react';
 import { Col } from "react-bootstrap";
+import { IProject } from '../Data/ProjectsData'; // Import the IProject interface
 
-interface IProjectCardViewProps {
-    title: string;
-    description: string;
-    l_desc: string;
-    imgUrl: string;
-    github_url: string | null;
-    vercel_url: string | null;
-    mp4: string;
-    id: number;
-    onCardClick?: (project: any) => void;
+interface IProjectCardViewProps extends IProject {
     onMouseOver: (e: React.MouseEvent<HTMLVideoElement>) => void;
     onMouseOut: (e: React.MouseEvent<HTMLVideoElement>) => void;
+    onCardClick?: (project: IProject) => void;
 }
 
-const ProjectCardView: React.FC<IProjectCardViewProps> = ({
+const ProjectCardView: React.FC<IProjectCardViewProps> = React.memo(({
     title,
     description,
     l_desc,
@@ -47,6 +40,6 @@ const ProjectCardView: React.FC<IProjectCardViewProps> = ({
             </div>
         </div>
     </Col>
-);
+));
 
 export default ProjectCardView;

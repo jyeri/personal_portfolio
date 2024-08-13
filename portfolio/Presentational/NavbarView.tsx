@@ -12,7 +12,7 @@ interface NavbarViewProps {
   onUpdateActiveLink: (link: string) => void;
 }
 
-const NavbarView: React.FunctionComponent<NavbarViewProps> = ({ activeLink, scrolled, onUpdateActiveLink }) => {
+const NavbarView: React.FunctionComponent<NavbarViewProps> = React.memo(({ activeLink, scrolled, onUpdateActiveLink }) => {
   return (
     <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
       <Container>
@@ -21,9 +21,7 @@ const NavbarView: React.FunctionComponent<NavbarViewProps> = ({ activeLink, scro
             <img src={JYRI} alt="Logo" />
           </div>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span className="navbar-toggler-icon"></span>
-        </Navbar.Toggle>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
@@ -32,10 +30,10 @@ const NavbarView: React.FunctionComponent<NavbarViewProps> = ({ activeLink, scro
           </Nav>
           <span className="navbar-text">
             <div className='social-icon'>
-              <a target='_blank' href='https://github.com/jyeri' className='git'><img src={github} alt=''/></a>
-              <a target='_blank' href='https://instagram.com/jyerirummukainen' className='insta'><img src={instagram} alt=''/></a>
-              <a target='_blank' href='https://www.linkedin.com/in/jrummukainen/' className='lin'><img src={linkedin} alt=''/></a>
-              <a target='_blank' href='https://open.spotify.com/user/31syrrea63mvyjwb7ujvpqynbq4u?si=a9c1ce80fc3f4864' className='spotify'><img src={spotify} alt=''/></a>
+              <a target='_blank' rel="noopener noreferrer" href='https://github.com/jyeri' className='git'><img src={github} alt=''/></a>
+              <a target='_blank' rel="noopener noreferrer" href='https://instagram.com/jyerirummukainen' className='insta'><img src={instagram} alt=''/></a>
+              <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/in/jrummukainen/' className='lin'><img src={linkedin} alt=''/></a>
+              <a target='_blank' rel="noopener noreferrer" href='https://open.spotify.com/user/31syrrea63mvyjwb7ujvpqynbq4u?si=a9c1ce80fc3f4864' className='spotify'><img src={spotify} alt=''/></a>
             </div>
             <Nav.Link href='#contact' className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>
               <button className="vvd"><span>Let´s Connect</span></button>
@@ -45,6 +43,6 @@ const NavbarView: React.FunctionComponent<NavbarViewProps> = ({ activeLink, scro
       </Container>
     </Navbar>
   );
-};
+});
 
 export default NavbarView;

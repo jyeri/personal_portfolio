@@ -3,7 +3,21 @@ import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../Assets/bw-logo.svg";
 import TrackVisibility from 'react-on-screen';
 
-const ContactView = ({
+interface ContactViewProps {
+    name: string;
+    setName: (value: string) => void;
+    email: string;
+    setEmail: (value: string) => void;
+    phone: string;
+    setPhone: (value: string) => void;
+    message: string;
+    setMessage: (value: string) => void;
+    buttonText: string;
+    status: { message: string; success: boolean };
+    handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+}
+
+const ContactView: React.FC<ContactViewProps> = ({
     name, setName, email, setEmail, phone, setPhone, message, setMessage, buttonText, status, handleSubmit
 }) => (
     <section className="contact" id="contact">

@@ -1,14 +1,18 @@
-import { useState, useRef, useCallback } from 'react';
 import emailJS from '@emailjs/browser';
+import { useState, useCallback } from 'react';
+
+interface Status {
+    message: string;
+    success: boolean;
+}
 
 export const useContactForm = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [message, setMessage] = useState('');
-    const [buttonText, setButtonText] = useState('Send');
-    const [status, setStatus] = useState({ message: '', success: false });
-    const form = useRef<HTMLFormElement>(null);
+    const [name, setName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [phone, setPhone] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
+    const [buttonText, setButtonText] = useState<string>('Send');
+    const [status, setStatus] = useState<Status>({ message: '', success: false });
 
     const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -42,7 +46,21 @@ export const useContactForm = () => {
                 setStatus({ message: 'Failed to send message. Please try again later.', success: false });
                 setButtonText('Failed');
             });
-    }, [name, email, phone, message]);
+        }, [name, email, phone, message]);
 
-    return { name, setName, email, setEmail, phone, setPhone, message, setMessage, buttonText, status, form, handleSubmit };
-};
+        return {
+            name,
+            setName,
+            email,
+            setEmail,
+            phone,
+            setPhone,
+            message,
+            setMessage,
+            buttonText,
+            setButtonText,
+            status,
+            setStatus,
+            handleSubmit,
+        };
+    };

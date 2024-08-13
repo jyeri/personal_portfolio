@@ -12,8 +12,20 @@ import arkki_img from '../Assets/projects/arkki/arkki_img.png';
 import arkki_mp4 from '../Assets/projects/arkki/arkki_mp4.mp4';
 import cvgame_img from '../Assets/projects/cvgame/cvgame_img.png';
 import cvgame_mp4 from '../Assets/projects/cvgame/cvgame_mp4.mp4';
-  
-    export const projects_c = [
+// Define a consistent interface for project data
+export interface IProject {
+    title: string;
+    description: string;
+    l_desc: string;
+    imgUrl: string;
+    mp4: string;
+    github_url: string | undefined;
+    vercel_url: string | undefined;
+    id: number;
+}
+
+// Project data array
+export const projects_c: IProject[] = [
         {
             title: "Push Swap",
             description: "Sorting Algorithm. Hive Helsinki Project, done in C. Aimes to sort a stack of numbers with the least amount of operations.",
@@ -46,7 +58,7 @@ import cvgame_mp4 from '../Assets/projects/cvgame/cvgame_mp4.mp4';
         },
     ];
 
-    export const projects_react = [
+    export const projects_react: IProject[] = [
         {
             title: "Online Store",
             description: "Online Store with PHP, HTML and CSS. Done in single weekend. Contains possibility to add products to cart, login and register.",
@@ -79,7 +91,7 @@ import cvgame_mp4 from '../Assets/projects/cvgame/cvgame_mp4.mp4';
         },
     ];
 
-    export const projects_py = [
+    export const projects_py: IProject[] = [
         {
             title: "Ultimate CV",
             description: "WIP, Playble CV, Python, Pygame. Ultimate CV is a game where you can play through my CV. Contains information about me & my life this far.",

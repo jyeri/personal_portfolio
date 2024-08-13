@@ -1,10 +1,21 @@
 import React from 'react';
 import { Row, Col, Container, Tab, Nav, Modal, Button } from "react-bootstrap";
 import ProjectCard from "../Containers/Projects/ProjectCard";
+import { IProject } from '../Data/ProjectsData'; // Import the IProject interface
 import github from '../Assets/github-icon-1.svg';
 import Vercel from '../Assets/Vercel.svg';
 
-export const ProjectsView = ({ showModal, currentProject, onCardClick, onCloseModal, projects_c, projects_react, projects_py }) => (
+interface ProjectsViewProps {
+  showModal: boolean;
+  currentProject: IProject | null;
+  onCardClick: (project: IProject) => void;
+  onCloseModal: () => void;
+  projects_c: IProject[];
+  projects_react: IProject[];
+  projects_py: IProject[];
+}
+
+export const ProjectsView: React.FC<ProjectsViewProps> = React.memo(({ showModal, currentProject, onCardClick, onCloseModal, projects_c, projects_react, projects_py }) => (
     <div>
     <section className="project" id="projects">
             <Container>
@@ -77,12 +88,12 @@ export const ProjectsView = ({ showModal, currentProject, onCardClick, onCloseMo
                     {(currentProject?.github_url) && (
                       <div className="modal-linkbox__github">
                         {currentProject?.github_url && (
-                        <a target='_blank' href={currentProject?.github_url} className='git'><img className="modal-linkbox__icon" src={github} alt=''/><span className="modal-linkbox__text">Github</span></a>)}
+                        <a target='_blank' rel="noopener" href={currentProject?.github_url} className='git'><img className="modal-linkbox__icon" src={github} alt=''/><span className="modal-linkbox__text">Github</span></a>)}
                       </div>)}
                       {(currentProject?.vercel_url) && (
                       <div className="modal-linkbox__vercel">
                         {currentProject?.vercel_url && (
-                        <a target='_blank' href={currentProject?.vercel_url} className='vercel'><img className="modal-linkbox__icon" src={Vercel} alt=''/><span className="modal-linkbox__text">Vercel</span></a>)}
+                        <a target='_blank' rel="noopener" href={currentProject?.vercel_url} className='vercel'><img className="modal-linkbox__icon" src={Vercel} alt=''/><span className="modal-linkbox__text">Vercel</span></a>)}
                       </div>
                       )}
                       <Button className="close-bottom" variant="secondary" onClick={onCloseModal}>
@@ -93,6 +104,6 @@ export const ProjectsView = ({ showModal, currentProject, onCardClick, onCloseMo
             </Modal>
     </section>
     </div>
-);
+));
 
 export default ProjectsView;

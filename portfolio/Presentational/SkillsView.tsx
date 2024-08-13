@@ -3,12 +3,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { CircularProgress } from './SVG/CircularProgress';
+import { ResponsiveType } from 'react-multi-carousel';
 
 interface SkillsViewProps {
-  responsive: any;
+  responsive: ResponsiveType;
 }
 
-const SkillsView: React.FunctionComponent<SkillsViewProps> = ({ responsive }) => {
+export const SkillsView: React.FunctionComponent<SkillsViewProps> = ({ responsive }) => {
   return (
     <section id="skills" className="skill">
       <Container>
@@ -46,7 +47,7 @@ const SkillsView: React.FunctionComponent<SkillsViewProps> = ({ responsive }) =>
                   <CircularProgress percentage={25} />
                   <h5>MySql</h5>
                 </div>
-              </Carousel>
+                </Carousel>
             </div>
           </Col>
         </Row>
@@ -55,4 +56,5 @@ const SkillsView: React.FunctionComponent<SkillsViewProps> = ({ responsive }) =>
   );
 };
 
-export default SkillsView;
+const SkillsViewMemo = React.memo(SkillsView);
+export default SkillsViewMemo;

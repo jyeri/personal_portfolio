@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectsView } from '../../Presentational/ProjectsView';
+import ProjectsView from '../../Presentational/ProjectsView';
 import { useProjects } from './useProjects';
 
 export const Projects = () => {
