@@ -3,7 +3,6 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import linkedin from '../Assets/reshot-icon-linkedin.svg';
 import github from '../Assets/reshot-icon-github.svg';
 import instagram from '../Assets/reshot-icon-instagram.svg';
-import spotify from '../Assets/reshot-icon-spotify.svg';
 import JYRI from '../Assets/bw-logo.png';
 
 interface NavbarViewProps {
@@ -33,7 +32,6 @@ const NavbarView: React.FunctionComponent<NavbarViewProps> = React.memo(({ activ
               <a target='_blank' rel="noopener noreferrer" href='https://github.com/jyeri' className='git'><img src={github} alt=''/></a>
               <a target='_blank' rel="noopener noreferrer" href='https://instagram.com/jyerirummukainen' className='insta'><img src={instagram} alt=''/></a>
               <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/in/jrummukainen/' className='lin'><img src={linkedin} alt=''/></a>
-              <a target='_blank' rel="noopener noreferrer" href='https://open.spotify.com/user/31syrrea63mvyjwb7ujvpqynbq4u?si=a9c1ce80fc3f4864' className='spotify'><img src={spotify} alt=''/></a>
             </div>
             <Nav.Link href='#contact' className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>
               <button className="vvd"><span>Let´s Connect</span></button>
