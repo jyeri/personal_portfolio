@@ -56,7 +56,7 @@ const ContactView: React.FC<ContactViewProps> = ({
                                     </div>
                                     <div className="row">
                                         <div className="col-12">
-                                            <input type="submit" value="Send Message" className="btn btn-primary rounded-0 py-2 px-4"/>
+                                            <input type="submit" value={buttonText} className="btn btn-primary rounded-0 py-2 px-4"/>
                                             <span className="submitting"></span>
                                         </div>
                                     </div>

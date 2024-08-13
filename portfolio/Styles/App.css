@@ -315,7 +315,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner .animate-text {
-  animation: color-change 1s infinite;
+  animation: color-change 1s;
 }
 
 @keyframes color-change {

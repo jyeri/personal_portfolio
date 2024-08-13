@@ -9,6 +9,7 @@ export const useBanner = () => {
     const [activeImg, setActiveImg] = useState('BannerImg2');
     const [description, setDescription] = useState('Get to know me little better by clicking other pictures. All of them contains little bit of me.');
     const [animateDescription, setAnimateDescription] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
 
     // Wrap tick in useCallback
@@ -56,12 +57,17 @@ export const useBanner = () => {
         };
         setDescription(descriptions[Img as keyof typeof descriptions] || 'Get to know me little better by clicking other pictures. All of them contains little bit of me.');
     };
+    const updateVisibility = useCallback((visible: boolean) => {
+        setIsVisible(visible);
+    }, []);
 
     return {
         text,
         description,
-        animateDescription,
         activeImg,
+        isVisible,
+        animateDescription,
+        updateVisibility,
         onUpdateActiveImg
     };
 };

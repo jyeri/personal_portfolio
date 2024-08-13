@@ -16,6 +16,5 @@ export const Banner: React.FC = () => {
     );
 };
 
-//lint problem fixed with naming export and having memoized orginal
 const BannerMemo = React.memo(Banner);
 export default BannerMemo;
