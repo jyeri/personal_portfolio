@@ -167,7 +167,8 @@ h3 {
     text-transform: uppercase;
 } 
 
-.mb-4 { 
+.mb-4 {
+    margin-top: 0.5rem!important;
     margin-bottom: 1.5rem!important;
 } 
 
