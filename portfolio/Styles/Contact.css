@@ -22,7 +22,7 @@
     box-sizing: border-box;
 } 
 
-.container { 
+.contact .container { 
     width: 100%; 
     padding-right: 15px; 
     padding-left: 15px; 
@@ -31,25 +31,25 @@
 } 
 
 @media (min-width: 576px){ 
-  .container { 
+    .contact .container { 
     max-width: 540px;
   } 
 }     
 
 @media (min-width: 768px){ 
-  .container { 
+    .content .container { 
     max-width: 720px;
   } 
 }     
 
 @media (min-width: 992px){ 
-  .container { 
+    .contact .container { 
     max-width: 960px;
   } 
 }     
 
 @media (min-width: 1200px){ 
-  .container { 
+    .contact .container { 
     max-width: 1140px;
   } 
 }     
@@ -64,13 +64,13 @@
     margin-left: -15px;
 } 
 
-.justify-content-center { 
+.contact .justify-content-center { 
     -webkit-box-pack: center!important; 
     -ms-flex-pack: center!important; 
     justify-content: center!important;
 } 
 
-.col-md-8 { 
+.contact .col-md-8 { 
     position: relative; 
     width: 100%; 
     padding-right: 15px; 
@@ -78,7 +78,7 @@
 } 
 
 @media (min-width: 768px){ 
-  .col-md-8 { 
+    .contact .col-md-8 { 
     -webkit-box-flex: 0; 
     -ms-flex: 0 0 66.66667%; 
     flex: 0 0 66.66667%; 
@@ -86,11 +86,11 @@
   } 
 }     
 
-.mb-5 { 
+.contact .mb-5 { 
     margin-bottom: 3rem!important;
 } 
 
-.col-md-4 { 
+.contact .col-md-4 { 
     position: relative; 
     width: 100%; 
     padding-right: 15px; 
@@ -98,7 +98,7 @@
 } 
 
 @media (min-width: 768px){ 
-  .col-md-4 { 
+    .contact .col-md-4 { 
     -webkit-box-flex: 0; 
     -ms-flex: 0 0 33.33333%; 
     flex: 0 0 33.33333%; 
@@ -106,11 +106,11 @@
   } 
 }     
 
-.mr-auto { 
+.contact .mr-auto { 
     margin-right: auto!important;
 } 
 
-.col-md-6 { 
+.contact .col-md-6 { 
     position: relative; 
     width: 100%; 
     padding-right: 15px; 
@@ -118,7 +118,7 @@
 } 
 
 @media (min-width: 768px){ 
-  .col-md-6 { 
+    .contact .col-md-6 { 
     -webkit-box-flex: 0; 
     -ms-flex: 0 0 50%; 
     flex: 0 0 50%; 
@@ -130,7 +130,7 @@
     margin-left: auto!important;
 } 
 
-.col-md-12 { 
+.contact .col-md-12 { 
     position: relative; 
     width: 100%; 
     padding-right: 15px; 
@@ -138,7 +138,7 @@
 } 
 
 @media (min-width: 768px){ 
-  .col-md-12 { 
+    .contact .col-md-12 { 
     -webkit-box-flex: 0; 
     -ms-flex: 0 0 100%; 
     flex: 0 0 100%; 
@@ -161,18 +161,18 @@
     font-size: 1.75rem;
 } 
 
-h3 { 
+.contact h3 { 
     font-family: "Roboto Mono", sans-serif !important; 
     color: #000; 
     text-transform: uppercase;
 } 
 
-.mb-4 {
+.contact .mb-4 {
     margin-top: 0.5rem!important;
     margin-bottom: 1.5rem!important;
 } 
 
-.thin-heading { 
+.contact .thin-heading { 
     font-weight: 300; 
     font-size: 40px;
 } 
@@ -193,25 +193,25 @@ h3 {
     font-weight: bold;
 } 
 
-.form-group { 
+.contact .form-group { 
     margin-bottom: 1rem;
 } 
 
-.col-12 { 
+.contact .col-12 { 
     position: relative; 
     width: 100%; 
     padding-right: 15px; 
     padding-left: 15px;
 } 
 
-.col-12 { 
+.contact .col-12 { 
     -webkit-box-flex: 0; 
     -ms-flex: 0 0 100%; 
     flex: 0 0 100%; 
     max-width: 100%;
 } 
 
-input { 
+.contact input { 
     font-family: "Roboto Mono", sans-serif !important;
     margin: 0; 
     font-family: inherit; 
@@ -219,11 +219,11 @@ input {
     line-height: inherit;
 } 
 
-input { 
+.contact input { 
     overflow: visible;
 }
 
-.form-control { 
+.contact .form-control { 
     display: block; 
     width: 100%; 
     height: calc(1.5em + 0.75rem + 2px); 
@@ -243,7 +243,7 @@ input {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 } 
 
-.form-control { 
+.contact .form-control { 
     border: none; 
     border-bottom: 1px solid #bebebe; 
     padding-left: 0; 
@@ -251,37 +251,37 @@ input {
     border-radius: 0px;
 } 
 
-.form-control { 
+.contact .form-control { 
     height: 50px;
 }
 
-.form-control:focus{
+.contact .form-control:focus{
     cursor: text; /* Changes cursor to text caret on focus */
     outline: none; /* Removes the default focus outline */
     border: none !important; /* Removes any borders */
     background-color: inherit; /* Keeps the background color unchanged */
 }
 
-input:focus, textarea:focus {
+.contact input:focus, .contact textarea:focus {
     cursor: text; /* Changes cursor to text caret on focus */
     outline: none; /* Removes the default focus outline */
     border: none !important; /* Removes any borders */
     background-color: inherit; /* Keeps the background color unchanged */
 }
 
-textarea { 
+.contact textarea { 
     margin: 0; 
     font-family: "Roboto Mono", sans-serif !important;
     font-size: inherit; 
     line-height: inherit;
 } 
 
-textarea { 
+.contact textarea { 
     overflow: auto; 
     resize: vertical;
 } 
 
-textarea.form-control { 
+.contact textarea.form-control { 
     height: auto;
 }
 
@@ -293,7 +293,7 @@ textarea.form-control {
     -webkit-appearance: button;
 } 
 
-.btn { 
+.contact .btn { 
     display: inline-block; 
     font-weight: 400; 
     color: #212529; 
@@ -316,52 +316,48 @@ textarea.form-control {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 } 
 
-.btn-primary { 
+.contact .btn-primary { 
     color: #212529; 
-    background-color: #ccda46; 
-    border-color: #ccda46;
+    background-color: #0c0067; 
+    border-color: #1e0052;
 } 
 
-.rounded-0 { 
+.contact .rounded-0 { 
     border-radius: 0!important;
 } 
 
-.py-2 { 
+.contact .py-2 { 
     padding-top: 0.5rem!important;
 } 
 
-.py-2 { 
+.contact .py-2 { 
     padding-bottom: 0.5rem!important;
 } 
 
-.px-4 { 
+.contact .px-4 { 
     padding-right: 1.5rem!important;
 } 
 
-.px-4 { 
+.contact .px-4 { 
     padding-left: 1.5rem!important;
 } 
 
-.btn { 
+.contact .btn { 
     height: 50px;
 } 
 
-.btn { 
-    border: none; 
-    border-radius: 0;
-} 
 
 [type="submit"]:not(:disabled) { 
     cursor: pointer;
 } 
 
-.btn.btn-primary { 
+.contact .btn.btn-primary { 
     background: #000; 
     color: #fff; 
     padding: 15px 20px;
 } 
 
-.submitting { 
+.contact .submitting { 
     float: left; 
     width: 100%; 
     padding: 10px 0; 
