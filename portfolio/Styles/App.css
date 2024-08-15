@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap');
 
 @font-face {
   font-family: 'Toko';
@@ -23,7 +26,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Toko', sans-serif !important;
 }
 
 html {
@@ -37,13 +39,14 @@ body {
   position: relative;
   background-color: #121212 !important;
   color: #fff !important;
-  font-family: 'Toko', sans-serif !important;
+  font-family: 'Toko', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   line-height: normal;
+  font-family: 'Toko', sans-serif;
 }
 
 p, a, li, button, ul {
@@ -51,6 +54,7 @@ p, a, li, button, ul {
   padding: 0;
   line-height: normal;
   text-decoration: none;
+  font-family: 'Toko', sans-serif;
 }
 
 a:hover {
@@ -704,7 +708,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative; /* Stay in place */
   z-index: 10000; /* Sit on top */
   left: 0;
-  margin-top: 4%;
+  margin-top: 5%;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -721,8 +725,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .modal-title {
-  letter-spacing: 1.8px;
-  font-size: 2.5em !important;
+  letter-spacing: 2px;
+  font-size: 2em !important;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
   text-align: center;
   width: 100%;
 }
@@ -730,21 +736,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /* Modal Content */
 .modal-body {
   color: rgb(80, 80, 80);
-  font-size: 1.2em;
+  font-size: 1em;
   background-color: #fefefe;
   margin: 4% auto; /* 15% from the top and centered */
   padding: 10px;
-  border: 1px solid #888;
   height: 80%;
   width: 100%; /* Could be more or less, depending on screen size */
-  max-width: 1600px; /* Making the modal a bit larger */
+  max-width: 1800px; /* Making the modal a bit larger */
   max-height: 2000px;
 }
 
 .modal-linkbox {
   display: flex;
   justify-content: left;
-  margin: 20px;
+  margin: 10px;
 }
 
 /* The Close Button */
