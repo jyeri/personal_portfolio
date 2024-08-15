@@ -714,6 +714,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(12, 12, 12); /* Fallback color */
   background-color: rgba(39, 32, 32, 0.4); /* Black w/ opacity */
+  padding-top: 5%; /* Adjust top padding to center modal vertically */
+  padding-bottom: 5%; /* Add bottom padding */
 }
 
 .modal-header
@@ -738,12 +740,25 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: rgb(80, 80, 80);
   font-size: 1em;
   background-color: #fefefe;
-  margin: 4% auto; /* 15% from the top and centered */
+  margin: 4% auto; /* Adjusted for centering */
   padding: 10px;
-  height: 80%;
-  width: 100%; /* Could be more or less, depending on screen size */
-  max-width: 1800px; /* Making the modal a bit larger */
-  max-height: 2000px;
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  max-height: 70vh; /* 70% of the viewport height */
+  width: 90%; /* Adjust width to be responsive */
+  max-width: 600px; /* Maximum width */
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    margin: 10% auto; /* Increase top margin on smaller screens */
+    width: 85%; /* Increase width for smaller screens */
+  }
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-linkbox {
@@ -797,9 +812,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border: 1px solid #808080;
   border-radius: 10px;
   background-color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 18px;
-  width: 150px;
+  width: 120px;
   height: 1em;
 }
 
@@ -814,16 +829,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border: 1px solid #808080;
   border-radius: 10px;
   background-color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 18px;
-  width: 150px;
+  width: 120px;
   height: 1em;
 }
 
 .modal-linkbox__icon{
   background-color: transparent;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   margin: auto;
   
 }
@@ -845,7 +860,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 10px;
   font-size: 1rem;
   padding: 18px;
-  width: 150px;
+  width: 120px;
   height: 1em;
   order: 3;
 }
@@ -873,7 +888,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin: 10px;
 }
 
-.button-github-inactive {
+.button-github__inactive {
   background-color: #676666;
   color: #fff;
   padding: 10px 20px;
