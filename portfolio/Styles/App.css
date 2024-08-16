@@ -730,9 +730,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 2px;
   font-size: 2em !important;
   text-align: center;
-  font-family: "Roboto", sans-serif;
   text-align: center;
   width: 100%;
+  font-family: 'Toko', sans-serif;
 }
 
 /* Modal Content */
@@ -814,8 +814,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: #ffffff;
   font-size: 0.9rem;
   padding: 18px;
-  width: 120px;
-  height: 1em;
+  width: 8em;
+  height: 2em;
 }
 
 .modal-linkbox__vercel {
@@ -831,8 +831,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: #ffffff;
   font-size: 0.9rem;
   padding: 18px;
-  width: 120px;
-  height: 1em;
+  width: 8em;
+  height: 2em;
 }
 
 .modal-linkbox__icon{
@@ -841,6 +841,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 25px;
   margin: auto;
   
+}
+
+@media (max-width: 480px) {
+  .modal-linkbox__icon {
+    height: 20px;
+    width: 20px;
+  } 
 }
 
 .modal a:link {
@@ -860,7 +867,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 10px;
   font-size: 1rem;
   padding: 18px;
-  width: 120px;
+  width: 4em;
   height: 1em;
   order: 3;
 }
