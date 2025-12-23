@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-page",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npm --prefix ./portfolio run dev",
+    "build": "npm --prefix ./portfolio run build",
+    "preview": "npm --prefix ./portfolio run preview",
+    "lint": "npm --prefix ./portfolio run lint",
+    "install:client": "npm ci --prefix ./portfolio",
+    "audit": "npm --prefix ./portfolio audit",
+    "audit:fix": "npm --prefix ./portfolio audit fix",
+    "audit:fix:force": "npm --prefix ./portfolio audit fix --force"
+  }
+}

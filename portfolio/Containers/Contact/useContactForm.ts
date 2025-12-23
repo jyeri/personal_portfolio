@@ -25,9 +25,10 @@ export const useContactForm = () => {
         }
 
         setButtonText('Sending...');
-        const serviceID = 'service_n6xu9t6';
-        const templateID = 'template_l6ocenu';
-        const userID = '2ul_Ijm4IxKG8ENJi';
+        // Prefer Vite env vars if present, else fall back to existing values
+        const serviceID = (import.meta as any).env?.VITE_EMAILJS_SERVICE_ID || 'service_79q7qcg';
+        const templateID = (import.meta as any).env?.VITE_EMAILJS_TEMPLATE_ID || 'template_l6ocenu';
+        const userID = (import.meta as any).env?.VITE_EMAILJS_PUBLIC_KEY || '2ul_Ijm4IxKG8ENJi';
 
         const templateParams = {
             to_name: 'Jyri Rummukainen',
@@ -37,13 +38,17 @@ export const useContactForm = () => {
             message: message,
         };
 
+        // Ensure SDK is initialized with the public key
+        try { emailJS.init({ publicKey: userID }); } catch (_) {}
+
         emailJS.send(serviceID, templateID, templateParams, userID)
             .then(() => {
                 setStatus({ message: 'Message sent successfully!', success: true });
                 setButtonText('Message sent');
             }, (error) => {
-                console.error('FAILED...', error.text);
-                setStatus({ message: 'Failed to send message. Please try again later.', success: false });
+                const errText = (error && (error.text || error.message)) || 'Unknown error';
+                console.error('FAILED...', errText);
+                setStatus({ message: `Failed to send message. ${errText}`, success: false });
                 setButtonText('Failed');
             });
         }, [name, email, phone, message]);
